@@ -20,11 +20,13 @@ jobs:
       - checkout: self
         clean: false
         fetchDepth: 1
-      - script: yarn run build
+      - script: npm install
+        displayName: install
+      - script: npm run build
         displayName: build
-      - script: yarn run bootstrap
+      - script: npm run bootstrap
         displayName: bootstrap
-      - script: yarn run test
+      - script: npm run test
         env:
           PROGRESS: none
         displayName: test
@@ -39,11 +41,13 @@ jobs:
       - task: NodeTool@0
         inputs:
           versionSpec: "11.x"
-      - script: yarn run build
+      - script: npm install
+        displayName: install
+      - script: npm run build
         displayName: build
-      - script: yarn run bootstrap
+      - script: npm run bootstrap
         displayName: bootstrap
-      - script: yarn run test
+      - script: npm run test
         displayName: test
 
   - job: MacOS_test
@@ -56,9 +60,11 @@ jobs:
       - task: NodeTool@0
         inputs:
           versionSpec: "11.x"
-      - script: yarn run build
+      - script: npm install
+        displayName: install
+      - script: npm run build
         displayName: build
-      - script: yarn run bootstrap
+      - script: npm run bootstrap
         displayName: bootstrap
-      - script: yarn run test
+      - script: npm run test
         displayName: test
