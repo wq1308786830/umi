@@ -19,6 +19,7 @@ jobs:
     steps:
       - checkout: self
         clean: false
+        fetchDepth: 1
       - script: yarn run build
         displayName: build
       - script: yarn run bootstrap
@@ -32,6 +33,9 @@ jobs:
     pool:
       vmImage: "vs2017-win2016"
     steps:
+      - checkout: self
+        clean: false
+        fetchDepth: 1
       - task: NodeTool@0
         inputs:
           versionSpec: "11.x"
@@ -46,6 +50,9 @@ jobs:
     pool:
       vmImage: "macOS-10.13"
     steps:
+      - checkout: self
+        clean: false
+        fetchDepth: 1
       - task: NodeTool@0
         inputs:
           versionSpec: "11.x"
