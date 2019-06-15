@@ -269,7 +269,7 @@ import withRouter from 'umi/withRouter';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default withRouter(
-  ({ location }) =>
+  ({ location, children }) =>
     <TransitionGroup>
       <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
         { children }
